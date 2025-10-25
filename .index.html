@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandra Lisa Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">AL</div>
+      <div>
+        <h1>Alexandra Lisa Library</h1>
+        <p class="subtitle">Fun Rainbow Library System</p>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tabBtn active" data-tab="userTab">User Booking</button>
+      <button class="tabBtn" data-tab="adminTab">Admin Panel</button>
+    </div>
+
+    <!-- User Booking Tab -->
+    <section id="userTab" class="tabContent">
+      <div class="card">
+        <h3>New Booking</h3>
+        <form id="bookingForm">
+          <label for="userName">Your Name</label>
+          <input type="text" id="userName" placeholder="e.g. Kiruthika" required>
+          <label for="bookTitle">Book Title</label>
+          <input type="text" id="bookTitle" placeholder="e.g. Algorithms" required>
+          <label for="date">Date</label>
+          <input type="date" id="date" required>
+          <label for="slot">Time Slot</label>
+          <select id="slot">
+            <option>Morning (9–11)</option>
+            <option>Midday (12–2)</option>
+            <option>Afternoon (3–5)</option>
+            <option>Evening (6–8)</option>
+          </select>
+          <button class="primary" type="submit">Reserve Book</button>
+        </form>
+        <p class="small">Bookings saved locally. Admin can view all bookings.</p>
+      </div>
+
+      <div class="card">
+        <div class="flex space">
+          <input id="q" type="text" placeholder="Search bookings...">
+          <div class="muted">Total: <span id="count">0</span></div>
+        </div>
+        <div id="list" class="bookings-list"></div>
+      </div>
+    </section>
+
+    <!-- Admin Panel Tab -->
+    <section id="adminTab" class="tabContent" style="display:none;">
+      <div class="card">
+        <div class="flex space">
+          <input id="adminSearch" type="text" placeholder="Search bookings...">
+          <button id="clearAllAdmin" class="btn warn">Clear All</button>
+        </div>
+        <div id="adminList" class="bookings-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
